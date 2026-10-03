@@ -4,409 +4,817 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Eye'll Be There | Mobile Eyewear in VA, MD &amp; DC</title>
-<meta name="description" content="Mobile eyewear services across Virginia, Maryland &amp; Washington D.C. Get frames, lenses &amp; fitting delivered to you. Call 703.864.1580.">
+<meta name="description" content="Mobile eyewear services across Virginia, Maryland &amp; Washington D.C. Frames, prescription lenses, fitting and delivery, brought to your door. Call or text 703.864.1580.">
 <meta property="og:title" content="Eye'll Be There | Eyewear Delivered to Your Door">
-<meta property="og:description" content="Mobile frames, prescription lenses and fitting across Virginia, Maryland &amp; Washington D.C.">
+<meta property="og:description" content="Mobile frames, prescription lenses and fitting for children, women and seniors across Virginia, Maryland &amp; Washington D.C.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#0c1a26">
+<meta property="og:url" content="https://eyellbethere.com/">
+<link rel="canonical" href="https://eyellbethere.com/">
+<meta name="theme-color" content="#0074dc">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074dc'/%3E%3Ccircle cx='21' cy='34' r='10' fill='none' stroke='%23fff' stroke-width='5'/%3E%3Ccircle cx='43' cy='34' r='10' fill='none' stroke='%23fff' stroke-width='5'/%3E%3Cpath d='M29 32q3-3 6 0' stroke='%23fff' stroke-width='4' fill='none'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* Layout: night-street hero, then alternating glass-light and ink bands; one eye-chart moment. */
+/* Layout: brand-blue header and page bands, white reading surfaces, ink type. One page per view, switched by the menu. */
 :root {
-  --ink: #0c1a26;
-  --night: #132a3d;
-  --honey: #e3a948;
-  --frost: #eef3f2;
-  --mist: #c9d6d8;
-  --slate: #4a5d6b;
+  --blue: #0074dc;        /* brand blue, sampled from eyellbethere.com */
+  --blue-deep: #00529e;
+  --blue-night: #062b52;
+  --sky: #eaf3fc;
+  --ink: #0d1b2a;
+  --slate: #4b5b6c;
+  --line: #d5e3f1;
+  --white: #ffffff;
+  --alert: #e0242b;       /* the red "24X7" on the current site */
   --display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
   --body: "Figtree", "Segoe UI", system-ui, sans-serif;
-  --gutter: clamp(16px, 5vw, 56px);
+  --gutter: clamp(16px, 5vw, 48px);
   --max: 1160px;
   color-scheme: light;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--frost); color: var(--ink); font: 400 1.0625rem/1.65 var(--body); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-h1, h2, h3 { font-family: var(--display); line-height: 1.04; letter-spacing: -0.025em; text-wrap: balance; margin: 0; }
+html { scroll-padding-top: 90px; }
+body { margin: 0; background: var(--white); color: var(--ink); font: 400 1.0625rem/1.65 var(--body); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.06; letter-spacing: -0.02em; text-wrap: balance; margin: 0; }
+h2 { font-size: clamp(1.9rem, 4.4vw, 3rem); font-weight: 800; }
+h3 { font-size: 1.35rem; font-weight: 800; }
 p { margin: 0; }
 a { color: inherit; }
-:focus-visible { outline: 3px solid var(--honey); outline-offset: 3px; border-radius: 4px; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
 .wrap { max-width: var(--max); margin: 0 auto; padding-inline: var(--gutter); }
-.eyebrow { font: 600 0.78rem/1 var(--body); letter-spacing: 0.16em; text-transform: uppercase; color: var(--honey); }
-.btn { display: inline-flex; align-items: center; gap: 0.6em; padding: 0.9em 1.4em; border-radius: 999px; font: 600 1rem/1 var(--body); text-decoration: none; transition: transform .2s, background .2s; }
+.eyebrow { font: 700 .78rem/1 var(--body); letter-spacing: .16em; text-transform: uppercase; color: var(--blue); }
+.muted { color: var(--slate); }
+.stack { display: grid; gap: 18px; min-width: 0; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .55em; padding: .9em 1.4em; border-radius: 999px; font: 700 1rem/1 var(--body); text-decoration: none; border: 0; cursor: pointer; transition: transform .2s, background .2s, color .2s; }
 .btn:hover { transform: translateY(-2px); }
-.btn-gold { background: var(--honey); color: var(--ink); }
-.btn-gold:hover { background: #f0bb5f; }
-.btn-ghost { border: 1.5px solid rgba(238,243,242,.4); color: var(--frost); }
-.btn-ghost:hover { border-color: var(--frost); }
 .btn svg { width: 18px; height: 18px; flex: none; }
+.btn-blue { background: var(--blue); color: var(--white); }
+.btn-blue:hover { background: var(--blue-deep); }
+.btn-white { background: var(--white); color: var(--blue-deep); }
+.btn-white:hover { background: var(--sky); }
+.btn-line { border: 2px solid rgba(255,255,255,.55); color: var(--white); }
+.btn-line:hover { border-color: var(--white); }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+section { padding-block: clamp(64px, 9vw, 110px); }
+.tint { background: var(--sky); }
 
-/* header */
-.top { position: fixed; top: 0; left: 0; right: 0; z-index: 20; padding-top: env(safe-area-inset-top, 0px); transition: background .3s, box-shadow .3s; }
-.top.solid { background: rgba(12,26,38,.92); backdrop-filter: blur(10px); box-shadow: 0 1px 0 rgba(238,243,242,.08); }
-.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 72px; }
-.brand { font: 800 1.3rem/1 var(--display); color: var(--frost); text-decoration: none; letter-spacing: -0.02em; }
-.brand span { color: var(--honey); }
-.nav { display: flex; gap: 28px; }
-.nav a { color: var(--mist); text-decoration: none; font-weight: 500; font-size: .95rem; }
-.nav a:hover { color: var(--frost); }
-.top .btn { padding: .7em 1.1em; font-size: .92rem; }
-@media (max-width: 860px) { .nav { display: none; } }
+/* ---------- header ---------- */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; background: var(--blue); color: var(--white); box-shadow: 0 2px 0 rgba(0,0,0,.08); }
+.top .wrap { display: flex; align-items: center; gap: 18px; height: 76px; }
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); margin-right: auto; }
+.logo svg { width: 64px; height: 40px; flex: none; }
+.logo b { font: 800 1.02rem/.95 var(--display); text-transform: uppercase; letter-spacing: .02em; }
+.menu { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
+.menu > li { position: relative; }
+.menu a, .menu .dd-btn { display: flex; align-items: center; gap: 6px; padding: 10px 12px; border-radius: 10px; font: 600 .97rem/1 var(--body); color: var(--white); text-decoration: none; background: none; border: 0; cursor: pointer; }
+.menu a:hover, .menu .dd-btn:hover, .menu [aria-current="page"] { background: rgba(255,255,255,.16); }
+.dd-btn svg { width: 14px; height: 14px; transition: transform .2s; }
+.dd-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+.dd { position: absolute; top: calc(100% + 8px); left: 0; min-width: 230px; background: var(--white); color: var(--ink); border-radius: 14px; padding: 8px; list-style: none; margin: 0; box-shadow: 0 18px 40px -12px rgba(6,43,82,.35); display: none; }
+.dd a { color: var(--ink); padding: 12px 14px; border-radius: 9px; font-weight: 600; }
+.dd a:hover, .dd [aria-current="page"] { background: var(--sky); color: var(--blue-deep); }
+.dd-btn[aria-expanded="true"] + .dd { display: block; }
+.call-top { background: var(--white); color: var(--blue-deep); white-space: nowrap; }
+.call-top small { color: var(--alert); font-weight: 800; font-size: .72rem; letter-spacing: .04em; }
+.burger { display: none; width: 48px; height: 48px; border: 0; border-radius: 12px; background: rgba(255,255,255,.14); color: var(--white); cursor: pointer; place-items: center; }
+.burger span, .burger span::before, .burger span::after { display: block; width: 22px; height: 2.5px; background: currentColor; border-radius: 2px; position: relative; transition: transform .25s, background .25s; }
+.burger span::before, .burger span::after { content: ""; position: absolute; left: 0; }
+.burger span::before { top: -7px; } .burger span::after { top: 7px; }
+.burger[aria-expanded="true"] span { background: transparent; }
+.burger[aria-expanded="true"] span::before { transform: translateY(7px) rotate(45deg); }
+.burger[aria-expanded="true"] span::after { transform: translateY(-7px) rotate(-45deg); }
 
-/* hero */
-.hero { position: relative; overflow: hidden; background: var(--ink); color: var(--frost); padding-block: calc(140px + env(safe-area-inset-top, 0px)) 120px; isolation: isolate; }
-.layer { position: absolute; inset: -12% 0; pointer-events: none; will-change: transform; }
-.sky { z-index: -3; background:
-  radial-gradient(ellipse 60% 40% at 30% 95%, rgba(227,169,72,.45), transparent 70%),
-  linear-gradient(180deg, #08131f 0%, #1b2a45 50%, #4a3550 80%, #8a5a4a 100%); }
-.lights { z-index: -2; }
-.lights i { position: absolute; border-radius: 50%; filter: blur(2px); }
-.rings { z-index: -1; }
-.rings span { position: absolute; border: 2px solid rgba(227,169,72,.55); border-radius: 50%; }
-.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(12,26,38,.85) 0%, rgba(12,26,38,.35) 60%, rgba(12,26,38,0) 100%); }
+@media (max-width: 1020px) {
+  .burger { display: grid; }
+  .top .call-top { display: none; }
+  .nav { position: fixed; inset: calc(76px + env(safe-area-inset-top, 0px)) 0 0 0; background: var(--white); color: var(--ink); overflow-y: auto; padding: 12px var(--gutter) calc(40px + env(safe-area-inset-bottom, 0px)); transform: translateX(100%); visibility: hidden; transition: transform .3s ease, visibility 0s .3s; }
+  .nav.open { transform: none; visibility: visible; transition: transform .3s ease; }
+  .menu { flex-direction: column; align-items: stretch; gap: 0; }
+  .menu > li { border-bottom: 1px solid var(--line); }
+  .menu a, .menu .dd-btn { color: var(--ink); font-size: 1.15rem; padding: 18px 4px; width: 100%; justify-content: space-between; border-radius: 0; }
+  .menu a:hover, .menu .dd-btn:hover { background: none; color: var(--blue); }
+  .menu [aria-current="page"] { background: none; color: var(--blue); }
+  .dd { position: static; box-shadow: none; padding: 0 0 10px 14px; min-width: 0; border-radius: 0; }
+  .dd a { font-size: 1.05rem; padding: 12px 4px; }
+  .nav .call-mobile { display: flex; margin-top: 24px; }
+}
+@media (min-width: 1021px) { .nav .call-mobile { display: none; } .menu > li:hover > .dd { display: block; } .menu > li:hover > .dd::before { content: ""; position: absolute; left: 0; right: 0; top: -10px; height: 10px; } }
+
+/* ---------- views ---------- */
+.view[hidden] { display: none !important; }
+
+/* hero (home) */
+.hero { position: relative; overflow: hidden; isolation: isolate; background: var(--blue-night); color: var(--white); padding-block: clamp(80px, 12vw, 140px) clamp(80px, 11vw, 130px); }
+.layer { position: absolute; inset: -14% 0; pointer-events: none; will-change: transform; }
+.l-back { z-index: -3; background: radial-gradient(ellipse 70% 60% at 85% 20%, rgba(0,116,220,.85), transparent 70%), radial-gradient(ellipse 50% 50% at 10% 100%, rgba(0,116,220,.45), transparent 70%), linear-gradient(160deg, #04203f, #062b52 60%, #0a3a6c); }
+.l-mid { z-index: -2; }
+.l-mid i { position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(140,200,255,.35), rgba(140,200,255,0) 70%); }
+.l-front { z-index: -1; }
+.glasses { position: absolute; right: 6%; top: 18%; width: min(520px, 46vw); color: rgba(255,255,255,.9); }
 .hero-copy { max-width: 640px; display: grid; gap: 24px; }
-.hero h1 { font-size: clamp(2.6rem, 7vw, 5rem); font-weight: 800; }
-.hero h1 em { font-style: normal; color: var(--honey); display: block; }
-.hero p.lead { font-size: 1.15rem; color: var(--mist); max-width: 54ch; }
-.hero .ctas { display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px; }
-.hero .no { display: flex; flex-wrap: wrap; gap: 8px 22px; font-weight: 600; color: var(--frost); font-size: .98rem; }
-.hero .no span::before { content: "✓ "; color: var(--honey); }
-.areas { display: inline-flex; flex-wrap: wrap; gap: 8px; }
-.areas b { font-weight: 500; font-size: .85rem; padding: .4em .9em; border-radius: 999px; background: rgba(238,243,242,.08); border: 1px solid rgba(238,243,242,.15); }
+.hero h1 { font-size: clamp(2.5rem, 6.6vw, 4.6rem); font-weight: 800; }
+.hero h1 em { font-style: normal; color: #7cc0ff; display: block; }
+.hero .lead { font-size: 1.15rem; color: #c8dcf0; max-width: 54ch; }
+.checks { display: flex; flex-wrap: wrap; gap: 8px 22px; font-weight: 600; }
+.checks span::before { content: "✓ "; color: #7cc0ff; }
+@media (max-width: 820px) { .glasses { top: auto; bottom: -6%; right: -18%; width: 80vw; opacity: .35; } }
 
-section { padding-block: clamp(72px, 10vw, 120px); }
-.head { display: grid; gap: 14px; margin-bottom: 48px; max-width: 720px; }
-.head h2 { font-size: clamp(2rem, 4.6vw, 3.2rem); font-weight: 800; }
-.head p { color: var(--slate); font-size: 1.08rem; }
+/* page band (inner pages) */
+.band { position: relative; overflow: hidden; isolation: isolate; background: var(--blue); color: var(--white); padding-block: clamp(56px, 8vw, 96px); }
+.band .layer.rings span { position: absolute; border: 2px solid rgba(255,255,255,.22); border-radius: 50%; }
+.band h1 { font-size: clamp(2.2rem, 5.6vw, 3.8rem); font-weight: 800; max-width: 18ch; }
+.band .lead { color: #e1eefb; max-width: 60ch; font-size: 1.1rem; }
+.band .stack { gap: 20px; }
 
-/* about */
-.about .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
-.about .copy { display: grid; gap: 20px; min-width: 0; }
-.about .copy > p { color: var(--slate); }
-.provide { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 12px; }
-.provide li { display: flex; gap: 14px; align-items: flex-start; font-weight: 500; }
-.provide li::before { content: ""; flex: none; width: 22px; height: 22px; margin-top: 2px; border-radius: 50%; border: 2.5px solid var(--honey); background: radial-gradient(circle, var(--honey) 0 4px, transparent 5px); }
-.lens-art { position: relative; aspect-ratio: 1; max-width: 100%; }
-.lens-art .disc { position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 32% 26%, rgba(255,250,235,.55) 0 5%, transparent 22%), linear-gradient(160deg, #1b2a45, #0c1a26 60%); box-shadow: inset 0 0 0 14px var(--honey), inset 0 0 0 18px #b67f2c, 0 30px 60px -20px rgba(12,26,38,.5); overflow: hidden; }
-.lens-art .house { position: absolute; left: 22%; right: 22%; bottom: 18%; height: 44%; }
-.lens-art .badge { position: absolute; right: -4%; bottom: 6%; background: var(--ink); color: var(--frost); padding: 16px 20px; border-radius: 16px; font: 700 1rem/1.25 var(--display); box-shadow: 0 16px 30px -12px rgba(12,26,38,.5); }
-.lens-art .badge small { display: block; font: 500 .8rem var(--body); color: var(--honey); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; }
-@media (max-width: 820px) { .about .wrap { grid-template-columns: 1fr; } .lens-art { max-width: 360px; margin-inline: auto; width: 100%; } }
+/* generic two-column copy */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 6vw, 72px); align-items: start; }
+@media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
+.ticks { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.ticks li { display: flex; gap: 12px; align-items: flex-start; font-weight: 500; }
+.ticks li::before { content: ""; flex: none; width: 22px; height: 22px; margin-top: 2px; border-radius: 50%; background: var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/14px no-repeat; }
 
-/* services */
-.services { background: var(--ink); color: var(--frost); }
-.services .head p { color: var(--mist); }
-.svc { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; background: rgba(238,243,242,.1); border-radius: 22px; overflow: hidden; }
-.svc article { background: var(--ink); padding: clamp(28px, 4vw, 44px); display: grid; gap: 14px; align-content: start; transition: background .3s; }
-.svc article:hover { background: var(--night); }
-.svc h3 { font-size: 1.55rem; font-weight: 700; }
-.svc p { color: var(--mist); }
-.svc .ic { width: 52px; height: 52px; color: var(--honey); }
-.call-strip { margin-top: 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 28px; border-radius: 18px; background: var(--honey); color: var(--ink); }
-.call-strip strong { font: 800 clamp(1.3rem, 3vw, 1.8rem)/1.1 var(--display); }
-.call-strip a { font: 800 clamp(1.3rem, 3vw, 1.8rem)/1.1 var(--display); text-decoration: none; border-bottom: 3px solid currentColor; }
-@media (max-width: 720px) { .svc { grid-template-columns: 1fr; } }
+/* cards */
+.cards { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.card { background: var(--white); border: 1px solid var(--line); border-radius: 20px; padding: 28px; display: grid; gap: 12px; align-content: start; text-decoration: none; transition: border-color .2s, transform .2s, box-shadow .2s; }
+a.card:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: 0 16px 30px -18px rgba(0,82,158,.45); }
+.card .ic { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; background: var(--sky); color: var(--blue); }
+.card .ic svg { width: 28px; height: 28px; }
+.card .more { color: var(--blue); font-weight: 700; font-size: .95rem; }
+.head { display: grid; gap: 12px; max-width: 720px; margin-bottom: 40px; }
 
-/* steps */
-.steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; counter-reset: s; }
-.steps li { counter-increment: s; display: grid; gap: 10px; padding-top: 22px; border-top: 2px solid var(--ink); }
-.steps li::before { content: "Step " counter(s); font: 600 .78rem var(--body); letter-spacing: .14em; text-transform: uppercase; color: #a0721f; }
-.steps h3 { font-size: 1.3rem; }
-.steps p { color: var(--slate); font-size: .98rem; }
-@media (max-width: 900px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
-
-/* who */
-.who { background: #e2eae9; }
-.people { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-.people article { background: var(--frost); border-radius: 22px; padding: 32px; display: grid; gap: 14px; align-content: start; }
-.people .ic { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: var(--honey); }
-.people .ic svg { width: 28px; height: 28px; }
-.people h3 { font-size: 1.4rem; }
-.people p { color: var(--slate); }
-@media (max-width: 860px) { .people { grid-template-columns: 1fr; } }
-
-/* why: eye-chart */
-.why .wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
-.why .copy { display: grid; gap: 18px; min-width: 0; }
-.why .copy p { color: var(--slate); }
-.chart { background: #fbfcfc; border-radius: 10px; padding: clamp(24px, 4vw, 44px) clamp(16px, 3vw, 36px); box-shadow: 0 1px 0 #d5dfdf, 0 30px 60px -30px rgba(12,26,38,.35); text-align: center; display: grid; gap: clamp(10px, 2vw, 18px); min-width: 0; }
-.chart .row { display: grid; grid-template-columns: 52px 1fr 52px; align-items: center; gap: 8px; }
-.chart .ac { font: 600 .72rem var(--body); color: #8a9aa3; letter-spacing: .04em; font-variant-numeric: tabular-nums; }
-.chart .ac:first-child { text-align: left; }
-.chart .ac:last-child { text-align: right; }
-.chart .ln { font-family: var(--display); font-weight: 800; letter-spacing: .02em; line-height: 1.05; overflow-wrap: anywhere; }
-.chart .r1 .ln { font-size: clamp(1.9rem, 5vw, 3.3rem); }
-.chart .r2 .ln { font-size: clamp(1.5rem, 3.8vw, 2.5rem); }
-.chart .r3 .ln { font-size: clamp(1.25rem, 3vw, 1.95rem); }
-.chart .r4 .ln { font-size: clamp(1.1rem, 2.4vw, 1.5rem); }
-.chart .r5 .ln { font-size: clamp(1rem, 2vw, 1.2rem); }
-.chart .r1 .ln { color: #a0721f; }
-.chart .note { font-size: .95rem; color: var(--slate); max-width: 44ch; margin: -4px auto 6px; }
-@media (max-width: 860px) { .why .wrap { grid-template-columns: 1fr; } }
+/* eye chart */
+.chart { background: var(--white); border-radius: 12px; padding: clamp(22px, 4vw, 40px) clamp(14px, 3vw, 32px); box-shadow: 0 1px 0 var(--line), 0 30px 60px -30px rgba(6,43,82,.35); display: grid; gap: 16px; text-align: center; min-width: 0; }
+.chart .row { display: grid; grid-template-columns: 54px 1fr 24px; align-items: center; gap: 8px; }
+.chart .ac { font: 700 .72rem var(--body); color: #8696a7; font-variant-numeric: tabular-nums; }
+.chart .ac:first-child { text-align: left; } .chart .ac:last-child { text-align: right; }
+.chart .ln { font: 800 1rem/1.05 var(--display); letter-spacing: .02em; overflow-wrap: anywhere; }
+.chart .r1 .ln { font-size: clamp(1.8rem, 4.6vw, 3rem); color: var(--blue); }
+.chart .r2 .ln { font-size: clamp(1.45rem, 3.6vw, 2.3rem); }
+.chart .r3 .ln { font-size: clamp(1.2rem, 2.9vw, 1.8rem); }
+.chart .r4 .ln { font-size: clamp(1.08rem, 2.3vw, 1.45rem); }
+.chart .r5 .ln { font-size: clamp(1rem, 1.9vw, 1.2rem); }
+.chart .note { font-size: .93rem; color: var(--slate); max-width: 46ch; margin: -6px auto 4px; }
 @media (max-width: 420px) { .chart .row { grid-template-columns: 1fr; } .chart .ac { display: none; } }
 
-/* contact */
-.contact { background: var(--ink); color: var(--frost); position: relative; overflow: hidden; }
-.contact .grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
-.contact h2 { font-size: clamp(2.2rem, 5.4vw, 3.8rem); font-weight: 800; }
-.contact h2 em { font-style: normal; color: var(--honey); }
-.contact .copy { display: grid; gap: 20px; min-width: 0; }
-.contact .copy p { color: var(--mist); max-width: 52ch; }
-.card { background: var(--night); border-radius: 22px; padding: 32px; display: grid; gap: 22px; border: 1px solid rgba(238,243,242,.1); min-width: 0; }
-.card dt { font: 600 .74rem var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--honey); margin-bottom: 4px; }
-.card dd { margin: 0; font-weight: 500; }
-.card .big { font: 800 1.7rem/1.1 var(--display); text-decoration: none; }
-.card dl { margin: 0; display: grid; gap: 20px; }
-@media (max-width: 820px) { .contact .grid { grid-template-columns: 1fr; } }
-.contact .ring { position: absolute; right: -120px; top: -120px; width: 420px; height: 420px; border: 2px solid rgba(227,169,72,.25); border-radius: 50%; pointer-events: none; }
-
-footer { background: #08131c; color: var(--mist); padding-block: 44px calc(44px + env(safe-area-inset-bottom, 0px)); font-size: .92rem; }
-footer .wrap { display: flex; flex-wrap: wrap; gap: 20px 40px; justify-content: space-between; align-items: center; }
-footer nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
-footer a { text-decoration: none; }
-footer a:hover { color: var(--frost); }
-
-/* mobile sticky call */
-.dock { display: none; }
-@media (max-width: 640px) {
-  .dock { display: flex; position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); z-index: 30; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
-  .top .btn { display: none; }
-  footer { padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px)); }
+/* tabs */
+.tabs { display: grid; grid-template-columns: 300px 1fr; gap: clamp(20px, 4vw, 48px); align-items: start; }
+.tablist { display: grid; gap: 6px; position: sticky; top: 100px; }
+.tab { display: flex; gap: 12px; align-items: center; text-align: left; padding: 14px 16px; border-radius: 12px; border: 1px solid transparent; background: none; font: 600 1rem/1.25 var(--body); color: var(--ink); cursor: pointer; }
+.tab b { font: 800 .8rem/1 var(--display); color: var(--blue); min-width: 1.6em; }
+.tab:hover { background: var(--sky); }
+.tab[aria-selected="true"] { background: var(--blue); color: var(--white); }
+.tab[aria-selected="true"] b { color: #cfe6ff; }
+.panel { background: var(--sky); border-radius: 22px; padding: clamp(24px, 4vw, 44px); display: grid; gap: 18px; min-width: 0; }
+.panel h3 { font-size: clamp(1.6rem, 3.4vw, 2.2rem); }
+.panel .tag { font: 700 .78rem var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--blue); }
+@media (max-width: 860px) {
+  .tabs { grid-template-columns: 1fr; }
+  .tablist { position: static; display: flex; overflow-x: auto; gap: 8px; padding-bottom: 6px; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); scrollbar-width: none; }
+  .tab { flex: none; white-space: nowrap; border-color: var(--line); scroll-snap-align: start; }
 }
 
+/* steps */
+.steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; gap: 10px; align-content: start; padding-top: 18px; border-top: 3px solid var(--blue); }
+.steps li::before { content: counter(s); font: 800 2.2rem/1 var(--display); color: var(--blue); }
+.steps h3 { font-size: 1.15rem; }
+.steps p { color: var(--slate); font-size: .97rem; }
+@media (max-width: 980px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+/* faq */
+.faq { display: grid; gap: 10px; max-width: 860px; }
+.faq details { border: 1px solid var(--line); border-radius: 14px; background: var(--white); }
+.faq summary { list-style: none; cursor: pointer; padding: 18px 54px 18px 20px; font: 700 1.05rem/1.35 var(--body); position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); width: 28px; height: 28px; border-radius: 50%; background: var(--sky); color: var(--blue); display: grid; place-items: center; font: 700 1.2rem/1 var(--body); transition: transform .2s; }
+.faq details[open] summary::after { content: "–"; background: var(--blue); color: var(--white); }
+.faq details p { padding: 0 20px 20px; color: var(--slate); }
+
+/* cta strip */
+.strip { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; padding: clamp(24px, 4vw, 36px); border-radius: 22px; background: var(--blue); color: var(--white); }
+.strip strong { font: 800 clamp(1.3rem, 3vw, 1.9rem)/1.15 var(--display); max-width: 26ch; }
+
+/* contact */
+.contact-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.contact-cards .card { gap: 10px; }
+.contact-cards .big { font: 800 clamp(1.3rem, 2.4vw, 1.7rem)/1.15 var(--display); color: var(--blue-deep); text-decoration: none; overflow-wrap: anywhere; }
+.contact-cards .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+.contact-cards .links a { font-weight: 700; color: var(--blue); }
+@media (max-width: 900px) { .contact-cards { grid-template-columns: 1fr; } }
+
+/* footer */
+footer { background: var(--blue-night); color: #c8dcf0; padding-block: 56px calc(40px + env(safe-area-inset-bottom, 0px)); font-size: .95rem; }
+.foot { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; }
+.foot h4 { margin: 0 0 12px; font: 700 .78rem var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--white); }
+.foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.foot a { text-decoration: none; } .foot a:hover { color: var(--white); text-decoration: underline; }
+.foot .logo { color: var(--white); margin-bottom: 14px; }
+.copy { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.12); font-size: .85rem; }
+@media (max-width: 860px) { .foot { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .foot { grid-template-columns: 1fr; } }
+
+/* phone dock */
+.dock { display: none; }
+@media (max-width: 640px) {
+  .dock { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); z-index: 30; }
+  .dock .btn { box-shadow: 0 10px 26px rgba(6,43,82,.35); padding-inline: .8em; }
+  footer { padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px)); }
+}
+body.menu-open .dock { display: none; }
+
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .btn { transition: none; }
+  .btn, .card, .nav, .burger span, .burger span::before, .burger span::after { transition: none !important; }
   .layer { transform: none !important; }
 }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Optician","name":"Eye'll Be There","description":"Mobile eyewear services: frames, prescription lenses, personalized guidance, delivery and fitting.","telephone":"+1-703-864-1580","areaServed":["Virginia","Maryland","Washington, D.C."],"sameAs":["https://www.instagram.com/eyell_be_there/"]}
+{"@context":"https://schema.org","@type":"Optician","name":"Eye'll Be There","url":"https://eyellbethere.com/","description":"Mobile eyewear services: frames, prescription lenses, personalized guidance, delivery and fitting at your home, workplace or school.","telephone":"+1-703-864-1580","email":"eyellbethere@gmail.com","areaServed":["Virginia","Maryland","Washington, D.C."],"sameAs":["https://www.instagram.com/eyell_be_there/"]}
 </script>
 </head>
 <body>
-<header class="top" id="top">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-van" viewBox="0 0 96 60"><g fill="none" stroke="currentColor" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"><path d="M4 10h52l16 18 18 6v14H4z"/><path d="M8 16h12v12H8zM24 16h12v12H24zM40 16h12v12H40zM56 16h6l9 12H56z"/><path d="M36 16v32"/></g><g fill="#0074dc" stroke="currentColor" stroke-width="4.5"><circle cx="22" cy="49" r="8"/><circle cx="72" cy="49" r="8"/></g><circle cx="22" cy="49" r="2.5" fill="currentColor"/><circle cx="72" cy="49" r="2.5" fill="currentColor"/></symbol>
+</svg>
+
+<header class="top">
   <div class="wrap">
-    <a class="brand" href="#">Eye'll Be <span>There</span></a>
-    <nav class="nav" aria-label="Main">
-      <a href="#services">Services</a>
-      <a href="#how">How it works</a>
-      <a href="#who">Who we serve</a>
-      <a href="#contact">Contact</a>
+    <a class="logo" href="#home" aria-label="Eye'll Be There home">
+      <svg aria-hidden="true"><use href="#i-van"/></svg>
+      <b>Eye'll<br>Be<br>There</b>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li>
+          <button class="dd-btn" aria-expanded="false" aria-controls="dd-services">Services <svg aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <ul class="dd" id="dd-services">
+            <li><a href="#services">All services</a></li>
+            <li><a href="#children">For Children</a></li>
+            <li><a href="#women">For Women</a></li>
+            <li><a href="#seniors">For Seniors</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="dd-btn" aria-expanded="false" aria-controls="dd-try">Try at Home <svg aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <ul class="dd" id="dd-try">
+            <li><a href="#try-at-home">Virginia</a></li>
+          </ul>
+        </li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+      <a class="btn btn-blue call-mobile" href="tel:+17038641580"><svg aria-hidden="true"><use href="#i-phone"/></svg>Click to Call · 24x7</a>
     </nav>
-    <a class="btn btn-gold" href="tel:+17038641580"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>703.864.1580</a>
+    <a class="btn call-top" href="tel:+17038641580"><svg aria-hidden="true"><use href="#i-phone"/></svg>703.864.1580 <small>24X7</small></a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span></button>
   </div>
 </header>
 
-<main>
-<section class="hero" aria-labelledby="h-hero">
-  <div class="layer sky" data-depth="0.25"></div>
-  <div class="layer lights" data-depth="0.45" aria-hidden="true"></div>
-  <div class="layer rings" data-depth="0.7" aria-hidden="true">
-    <span style="width:300px;height:300px;right:12%;top:30%"></span>
-    <span style="width:300px;height:300px;right:calc(12% + 330px);top:31%"></span>
-  </div>
-  <div class="wrap">
-    <div class="hero-copy rv">
-      <span class="eyebrow">Mobile eyewear · VA · MD · DC</span>
-      <h1 id="h-hero">Eyewear made easy. <em>Delivered to your door.</em></h1>
-      <p class="lead">Quality frames, prescription lenses, and personalized guidance brought directly to you, including a curated range of women's, senior and children's frames.</p>
-      <div class="no"><span>No store visits</span><span>No hassle</span><span>Comfort, care &amp; clarity</span></div>
-      <div class="ctas">
-        <a class="btn btn-gold" href="tel:+17038641580"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call now · 703.864.1580</a>
-        <a class="btn btn-ghost" href="#how">How it works</a>
+<main id="main">
+
+<!-- ================= HOME ================= -->
+<div class="view" id="v-home" data-title="Eye'll Be There | Mobile Eyewear in VA, MD &amp; DC">
+  <section class="hero" aria-labelledby="h-home">
+    <div class="layer l-back" data-depth="0.25"></div>
+    <div class="layer l-mid" data-depth="0.45" aria-hidden="true"></div>
+    <div class="layer l-front" data-depth="0.7" aria-hidden="true">
+      <svg class="glasses" viewBox="0 -6 520 216" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"><circle cx="130" cy="110" r="88"/><circle cx="390" cy="110" r="88"/><path d="M218 104q42-34 84 0M42 92 8 70M478 92l34-22"/><path d="M84 70q20-22 52-24M344 70q20-22 52-24" stroke-width="5" opacity=".6"/></svg>
+    </div>
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow" style="color:#7cc0ff">Mobile eyewear · Virginia · Maryland · D.C.</span>
+        <h1 id="h-home">Eyewear made easy. <em>Delivered to your door.</em></h1>
+        <p class="lead">Quality frames, prescription lenses, and personalized guidance brought directly to you, including a curated range of women's, senior and children's eye frames.</p>
+        <div class="checks"><span>No store visits</span><span>No hassle</span><span>Comfort, care &amp; clarity</span></div>
+        <div class="ctas">
+          <a class="btn btn-white" href="tel:+17038641580"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call now · 703.864.1580</a>
+          <a class="btn btn-line" href="#how-it-works">How it works</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="about" id="about" aria-labelledby="h-about">
-  <div class="wrap">
-    <div class="copy rv">
-      <span class="eyebrow" style="color:#a0721f">Welcome to Eye'll Be There</span>
-      <h2 id="h-about" style="font-size:clamp(2rem,4.6vw,3.2rem);font-weight:800">Bringing quality eyewear directly to you</h2>
-      <p>We make getting new glasses simple, comfortable, and completely mobile. Instead of asking you to visit an optical store, we bring frames, lens options, and expert guidance right to your door, whether that's your home, your workplace, or a nearby coffee shop.</p>
-      <p>Our service is designed for anyone who prefers convenience, comfort, and a personalized shopping experience. We provide:</p>
-      <ul class="provide">
-        <li>A curated collection of quality eyeglass frames</li>
-        <li>High-quality prescription lenses</li>
-        <li>One-on-one assistance in choosing the best style and fit</li>
-      </ul>
-    </div>
-    <div class="lens-art" data-depth="-0.12" aria-hidden="true">
-      <div class="disc">
-        <svg class="house" viewBox="0 0 200 130" fill="none">
-          <path d="M20 60 100 8l80 52v70H20z" fill="#08131c"/>
-          <rect x="44" y="72" width="34" height="34" fill="#e3a948"/><rect x="122" y="72" width="34" height="34" fill="#f3c97a"/>
-          <path d="M61 72v34M44 89h34M139 72v34M122 89h34" stroke="#08131c" stroke-width="3"/>
-          <rect x="88" y="90" width="24" height="40" fill="#1b2a45"/>
-        </svg>
+  <section aria-labelledby="h-welcome">
+    <div class="wrap split">
+      <div class="stack">
+        <span class="eyebrow">Welcome to Eye'll Be There</span>
+        <h2 id="h-welcome">Bringing quality eyewear directly to you</h2>
+        <p class="muted">We make getting new glasses simple, comfortable, and completely mobile. Instead of asking you to visit an optical store, we bring frames, lens options, and expert guidance right to your door, whether that's your home, your workplace, or a nearby coffee shop, so you can try frames at home across Virginia, Maryland, and Washington D.C.</p>
+        <p class="muted">Our service is designed for anyone who prefers convenience, comfort, and a personalized shopping experience.</p>
       </div>
-      <div class="badge"><small>We come to</small>Home · Work · Café</div>
+      <div class="stack">
+        <h3>We provide</h3>
+        <ul class="ticks">
+          <li>A curated collection of quality eyeglass frames</li>
+          <li>High-quality prescription lenses</li>
+          <li>One-on-one assistance in choosing the best style and fit</li>
+          <li>Delivery of your finished glasses, with fitting</li>
+        </ul>
+        <div class="ctas"><a class="btn btn-blue" href="#services">See all services</a></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="services" id="services" aria-labelledby="h-svc">
-  <div class="wrap">
-    <div class="head rv">
-      <span class="eyebrow">Our services</span>
-      <h2 id="h-svc">Everything an optical store does, at your door</h2>
-      <p>Serving Virginia, Maryland and Washington D.C.</p>
+  <section class="tint" aria-labelledby="h-who">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Who we serve</span>
+        <h2 id="h-who">Eyewear for every member of the family</h2>
+      </div>
+      <div class="cards">
+        <a class="card" href="#children">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="7" r="3.5"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/></svg></span>
+          <h3>Children</h3>
+          <p class="muted">Some children feel overwhelmed in busy optical stores. At home, they can choose glasses calmly and with confidence.</p>
+          <span class="more">Children's designer glasses →</span>
+        </a>
+        <a class="card" href="#women">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="7" cy="13" r="4"/><circle cx="17" cy="13" r="4"/><path d="M11 12.5q1-1 2 0"/></svg></span>
+          <h3>Women</h3>
+          <p class="muted">Stylish, comfortable eye frames for women, tried on at home and matched to your look and fit.</p>
+          <span class="more">Eye frames for women →</span>
+        </a>
+        <a class="card" href="#seniors">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></span>
+          <h3>Seniors &amp; assisted living</h3>
+          <p class="muted">Patient, compassionate service for seniors who aren't mobile or who live in care homes. No travel needed.</p>
+          <span class="more">Eyeglasses for seniors →</span>
+        </a>
+        <div class="card">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <h3>Busy professionals &amp; families</h3>
+          <p class="muted">If your schedule is packed, we make the process quick, easy and fully flexible, wherever and whenever works best for you.</p>
+        </div>
+      </div>
     </div>
-    <div class="svc">
-      <article class="rv">
-        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="13" cy="28" r="9"/><circle cx="35" cy="28" r="9"/><path d="M22 27c1.2-1.5 2.8-1.5 4 0M4 26 7 14M44 26l-3-12"/></svg>
-        <h3>Mobile Frame Selection</h3>
-        <p>We bring a curated collection of stylish, high-quality frames right to you, so you can try frames at home in your own space, take your time, and find the look you feel confident in.</p>
-      </article>
-      <article class="rv">
-        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><ellipse cx="24" cy="24" rx="12" ry="18"/><path d="M24 6c-5 5-5 31 0 36"/><path d="M38 14h6M38 24h8M38 34h6"/></svg>
-        <h3>Prescription Lens Options</h3>
-        <p>From standard single-vision lenses to advanced options, we provide a range of high-quality lens solutions to match your needs and prescription.</p>
-      </article>
-      <article class="rv">
-        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M8 12h24v16H18l-8 7v-7H8z"/><path d="M36 20h4v14h-2v6l-7-6h-9"/></svg>
-        <h3>Personalized Guidance</h3>
-        <p>Not sure which frame suits your face shape, or which lens type fits your lifestyle? We offer friendly, professional support, whether you try glasses at home or prefer guidance over a call.</p>
-      </article>
-      <article class="rv">
-        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14h24v20H4zM28 20h9l7 7v7H28z"/><circle cx="12" cy="36" r="4"/><circle cx="36" cy="36" r="4"/></svg>
-        <h3>Delivery &amp; Fitting</h3>
-        <p>Once your glasses are ready, we deliver them to you and make sure they fit perfectly and comfortably, completing your try-at-home experience.</p>
-      </article>
-    </div>
-    <div class="call-strip rv">
-      <strong>Ready for new glasses?</strong>
-      <a href="tel:+17038641580">Call now: 703.864.1580</a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="how" aria-labelledby="h-how">
-  <div class="wrap">
-    <div class="head rv">
-      <span class="eyebrow" style="color:#a0721f">How it works</span>
-      <h2 id="h-how">From your call to a perfect fit</h2>
+  <section aria-labelledby="h-why">
+    <div class="wrap split" style="align-items:center">
+      <div class="stack">
+        <span class="eyebrow">Why choose us</span>
+        <h2 id="h-why">Getting new glasses shouldn't be complicated</h2>
+        <p class="muted">That's why we deliver a complete mobile eyewear experience across Virginia, Maryland, and Washington D.C. From helping you choose the right frames to fitting your prescription lenses, we come to you, offering comfort, convenience, and personal care.</p>
+        <p class="muted">Perfect for families, seniors, and special needs individuals.</p>
+      </div>
+      <div class="chart" role="list" aria-label="Reasons to choose Eye'll Be There">
+        <div class="row r1" role="listitem"><span class="ac">20/200</span><span class="ln">Comfort Comes First</span><span class="ac">1</span></div>
+        <p class="note">Try on frames in the comfort of your own environment, without store pressure.</p>
+        <div class="row r2" role="listitem"><span class="ac">20/100</span><span class="ln">Convenient &amp; Time-Saving</span><span class="ac">2</span></div>
+        <p class="note">No appointments at optical stores. We come to you.</p>
+        <div class="row r3" role="listitem"><span class="ac">20/70</span><span class="ln">Personalized Experience</span><span class="ac">3</span></div>
+        <p class="note">One-on-one guidance to choose the best frames and lenses.</p>
+        <div class="row r4" role="listitem"><span class="ac">20/50</span><span class="ln">Premium Quality</span><span class="ac">4</span></div>
+        <p class="note">Stylish, durable frames and high-quality prescription lenses.</p>
+        <div class="row r5" role="listitem"><span class="ac">20/40</span><span class="ln">Accessible for All</span><span class="ac">5</span></div>
+        <p class="note">Perfect for special needs children, seniors, and anyone with mobility challenges.</p>
+      </div>
     </div>
-    <ol class="steps">
-      <li class="rv"><h3>Give us a call</h3><p>Reach us at 703.864.1580 and tell us where and when works best for you.</p></li>
-      <li class="rv"><h3>We come to you</h3><p>Your home, your workplace, or a nearby coffee shop. We bring the frames and lens options.</p></li>
-      <li class="rv"><h3>Choose with guidance</h3><p>Try frames on in your own space, with one-on-one help on style, fit and lenses.</p></li>
-      <li class="rv"><h3>Delivery &amp; fitting</h3><p>We deliver your finished glasses and adjust them for a comfortable fit.</p></li>
-    </ol>
-  </div>
-</section>
+  </section>
 
-<section class="who" id="who" aria-labelledby="h-who">
-  <div class="wrap">
-    <div class="head rv">
-      <span class="eyebrow" style="color:#a0721f">Who we serve</span>
-      <h2 id="h-who">Care that fits the person, not the store</h2>
-    </div>
-    <div class="people">
-      <article class="rv">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg></div>
-        <h3>Special Needs Children</h3>
-        <p>Some children feel overwhelmed in busy optical stores. Our mobile service offers a calm, comfortable environment at home, making it easier for them to choose their glasses with confidence.</p>
-      </article>
-      <article class="rv">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></div>
-        <h3>Seniors &amp; Assisted Living Communities</h3>
-        <p>For seniors who aren't mobile or who live in care homes, we bring the full eyewear experience directly to them, with patient, compassionate service and no travel needed.</p>
-      </article>
-      <article class="rv">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <h3>Busy Professionals &amp; Families</h3>
-        <p>If your schedule is packed, we make the process quick, easy and fully flexible, wherever and whenever works best for you.</p>
-      </article>
-    </div>
-  </div>
-</section>
+  <section class="tint" style="padding-block:56px">
+    <div class="wrap"><div class="strip"><strong>We're serving Virginia, Maryland &amp; Washington D.C.</strong><div class="ctas"><a class="btn btn-white" href="tel:+17038641580"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 703.864.1580</a><a class="btn btn-line" href="#contact">Contact us</a></div></div></div>
+  </section>
+</div>
 
-<section class="why" id="why" aria-labelledby="h-why">
-  <div class="wrap">
-    <div class="copy rv">
-      <span class="eyebrow" style="color:#a0721f">Why choose us</span>
-      <h2 id="h-why" style="font-size:clamp(2rem,4.6vw,3.2rem);font-weight:800">Getting new glasses shouldn't be complicated</h2>
-      <p>We deliver a complete mobile eyewear experience across Virginia, Maryland and Washington D.C. From helping you choose the right frames to fitting your prescription lenses, we come to you with comfort, convenience and personal care.</p>
-      <p>Perfect for families, seniors, and special needs individuals.</p>
+<!-- ================= SERVICES ================= -->
+<div class="view" id="v-services" data-title="Services | Eye'll Be There" hidden>
+  <section class="band">
+    <div class="layer rings" data-depth="0.5" aria-hidden="true"><span style="width:340px;height:340px;right:-60px;top:-80px"></span><span style="width:220px;height:220px;right:220px;top:40%"></span></div>
+    <div class="wrap stack">
+      <span class="eyebrow" style="color:#cfe6ff">Our services</span>
+      <h1>Professional optical care, brought to you</h1>
+      <p class="lead">Eight ways we make getting the right eyewear simple, convenient, and stress-free, at your home, workplace, school, or event.</p>
     </div>
-    <div class="chart rv" role="list" aria-label="Reasons to choose Eye'll Be There">
-      <div class="row r1" role="listitem"><span class="ac">20/200</span><span class="ln">Comfort Comes First</span><span class="ac">1</span></div>
-      <p class="note">Try on frames in the comfort of your own environment, without store pressure.</p>
-      <div class="row r2" role="listitem"><span class="ac">20/100</span><span class="ln">Convenient &amp; Time-Saving</span><span class="ac">2</span></div>
-      <div class="row r3" role="listitem"><span class="ac">20/70</span><span class="ln">Personalized Experience</span><span class="ac">3</span></div>
-      <div class="row r4" role="listitem"><span class="ac">20/50</span><span class="ln">Premium Quality</span><span class="ac">4</span></div>
-      <div class="row r5" role="listitem"><span class="ac">20/40</span><span class="ln">Accessible for All</span><span class="ac">5</span></div>
+  </section>
+  <section>
+    <div class="wrap tabs" data-tabs>
+      <div class="tablist" role="tablist" aria-label="Services">
+        <button class="tab" role="tab" id="t1" aria-controls="p1" aria-selected="true"><b>01</b>Mobile Optical Services</button>
+        <button class="tab" role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1"><b>02</b>Prescription Eyewear Consultation</button>
+        <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1"><b>03</b>Premium Frame Collections</button>
+        <button class="tab" role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1"><b>04</b>Personalized Styling &amp; Fit</button>
+        <button class="tab" role="tab" id="t5" aria-controls="p5" aria-selected="false" tabindex="-1"><b>05</b>Lens Solutions</button>
+        <button class="tab" role="tab" id="t6" aria-controls="p6" aria-selected="false" tabindex="-1"><b>06</b>Convenience Services</button>
+        <button class="tab" role="tab" id="t7" aria-controls="p7" aria-selected="false" tabindex="-1"><b>07</b>Specialty Services</button>
+        <button class="tab" role="tab" id="t8" aria-controls="p8" aria-selected="false" tabindex="-1"><b>08</b>Customer Support</button>
+      </div>
+      <div>
+        <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1">
+          <span class="tag">Service 1 of 8</span><h3>Mobile Optical Services</h3>
+          <p>Getting the right eyewear should be simple, convenient, and stress-free. Our service brings professional optical care directly to you, making it easier to choose the best eye frames for your style and needs. We focus on comfort, flexibility, and personalized attention for every client. Enjoy a modern approach to eyewear that fits seamlessly into your lifestyle.</p>
+          <ul class="ticks"><li>On-site eyewear appointments at homes, workplaces, schools, or events</li><li>Flexible scheduling to accommodate busy lifestyles</li><li>Private, personalized eyewear fittings</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+          <span class="tag">Service 2 of 8</span><h3>Prescription Eyewear Consultation</h3>
+          <p>Choosing the right prescription eyewear is about more than just vision correction. We provide expert consultation to help you select the perfect prescription eye frames and guide you on options like children's prescription sunglasses. Our goal is to ensure you feel confident choosing lenses that support both your eyesight and daily comfort.</p>
+          <ul class="ticks"><li>Review of clients' current prescriptions</li><li>Guidance on lens types (single vision, progressives, bifocals, etc.)</li><li>Education on lens coatings (anti-reflective, blue-light, UV protection, etc.)</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+          <span class="tag">Service 3 of 8</span><h3>Premium Frame Collections</h3>
+          <p>Our premium frame collections offer something for every style and personality. From bold, fashion-forward designs to timeless classics, our eye frames for women combine comfort with quality. With options for all ages and fits, finding the perfect pair is effortless and enjoyable.</p>
+          <ul class="ticks"><li>Bold, fashion-forward styles</li><li>Lightweight titanium and high-durability options</li><li>Classic, professional, and minimalist designs</li><li>Frames for men, women, teens, and children</li><li>Inclusive fits: wide, narrow, low bridge, and specialty sizes</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
+          <span class="tag">Service 4 of 8</span><h3>Personalized Styling &amp; Fit</h3>
+          <p>Our personalized styling and fit service ensures your eyewear looks as good as it feels. We offer expert recommendations based on your face shape, complexion, and lifestyle. From custom adjustments to curated styles for every occasion, we make sure your glasses reflect your personality and fit perfectly.</p>
+          <ul class="ticks"><li>Professional recommendations based on face shape, complexion, and lifestyle</li><li>Custom frame adjustments for comfort and accuracy</li><li>Style curation for individuals who want multiple looks (work, weekend, sports)</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p5" aria-labelledby="t5" hidden>
+          <span class="tag">Service 5 of 8</span><h3>Lens Solutions</h3>
+          <p>Clear vision starts with choosing the right lens solutions for your daily needs. We offer advanced options designed for comfort, clarity, and long-term eye protection. From high-performance lenses to prescription sunglasses and children's prescription sunglasses, we ensure every pair is tailored to your lifestyle.</p>
+          <ul class="ticks"><li>High-index lenses for thinner, lighter glasses</li><li>Blue-light protection for computer users</li><li>Transition/photochromic lenses</li><li>Prescription sunglasses</li><li>Safety eyewear with prescription options</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p6" aria-labelledby="t6" hidden>
+          <span class="tag">Service 6 of 8</span><h3>Convenience Services</h3>
+          <p>We make eyewear simple with services designed around your schedule and comfort. From try-at-home selections to repairs and support for children's designer glasses, convenience is always our priority.</p>
+          <ul class="ticks"><li>Try-at-home or on-site frame selection</li><li>Delivery of completed eyewear</li><li>Replacement of lost or broken frames</li><li>On-site minor repairs and adjustments (nose pads, screw tightening)</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p7" aria-labelledby="t7" hidden>
+          <span class="tag">Service 7 of 8 · Optional add-ons</span><h3>Specialty Services</h3>
+          <p>Our specialty services are designed to bring personalized eyewear experiences to groups, families, and communities. With flexible add-on options, we make it easy to access professional optical care in a way that suits your setting and schedule.</p>
+          <ul class="ticks"><li>Corporate or office "pop-up eyewear days"</li><li>School screenings and youth eyewear fittings</li><li>Assisted-living or senior community visits</li><li>Virtual pre-appointments for quick style previews</li><li>Concierge VIP packages (for repeat clients or families)</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p8" aria-labelledby="t8" hidden>
+          <span class="tag">Service 8 of 8</span><h3>Customer Support</h3>
+          <p>Exceptional eyewear doesn't end at the purchase. Our customer support continues long after you receive your glasses. We're committed to ensuring lasting comfort, clarity, and confidence with every pair you wear.</p>
+          <ul class="ticks"><li>Follow-up fit checks</li><li>Warranty explanations and frame/lens care education</li><li>Easy reordering for returning customers</li></ul>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+  <section class="tint" style="padding-block:56px">
+    <div class="wrap"><div class="strip"><strong>We're serving Virginia, Maryland &amp; Washington D.C. Connect with our expert.</strong><a class="btn btn-white" href="tel:+17038641580"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 703.864.1580</a></div></div>
+  </section>
+</div>
 
-<section class="contact" id="contact" aria-labelledby="h-contact">
-  <div class="ring" data-depth="0.3" aria-hidden="true"></div>
-  <div class="wrap grid">
-    <div class="copy rv">
-      <span class="eyebrow">Book a visit</span>
-      <h2 id="h-contact">You call. <em>We'll be there.</em></h2>
-      <p>Visits are arranged by phone, at a place and time that suit you. Call to talk through frames, lenses, or anything you're unsure about.</p>
-      <div><a class="btn btn-gold" href="tel:+17038641580">Call 703.864.1580</a></div>
+<!-- ================= CHILDREN ================= -->
+<div class="view" id="v-children" data-title="Children's Designer Glasses | Eye'll Be There" hidden>
+  <section class="band">
+    <div class="layer rings" data-depth="0.5" aria-hidden="true"><span style="width:340px;height:340px;right:-60px;top:-80px"></span><span style="width:220px;height:220px;right:220px;top:40%"></span></div>
+    <div class="wrap stack">
+      <span class="eyebrow" style="color:#cfe6ff">Services · For children</span>
+      <h1>Children's Designer Glasses</h1>
+      <p class="lead">Looking for children's designer glasses without the hassle of store visits? Eye'll Be There brings expert eye care and stylish eyewear directly to your home across Virginia, Maryland, and Washington D.C.</p>
+      <div class="ctas"><a class="btn btn-white" href="tel:+17038641580"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call now</a></div>
     </div>
-    <div class="card rv">
-      <dl>
-        <div><dt>Phone</dt><dd><a class="big" href="tel:+17038641580">703.864.1580</a></dd></div>
-        <div><dt>Service area</dt><dd>Virginia · Maryland · Washington D.C.</dd></div>
-        <div><dt>Where we meet you</dt><dd>Your home, your workplace, or a nearby coffee shop</dd></div>
-        <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/eyell_be_there/" target="_blank" rel="noopener">@eyell_be_there</a></dd></div>
-      </dl>
+  </section>
+  <section>
+    <div class="wrap split">
+      <div class="stack">
+        <h2>Glasses they'll actually wear</h2>
+        <p class="muted">We help you choose the right glasses children need: comfortable, durable, and perfectly fitted for daily use.</p>
+        <p class="muted">From school to playtime, your child needs clear vision and frames they'll actually wear. Our mobile service makes it easy to get children's sunglasses and everyday prescription glasses without commuting, long waits, or guesswork.</p>
+      </div>
+      <div class="stack">
+        <h2>Children's sunglasses &amp; prescription sunglasses made easy</h2>
+        <p class="muted">Protect your child's eyes while ensuring clear vision outdoors with high-quality children's prescription sunglasses. We provide in-home fittings so your child gets the right lenses and frames for both comfort and protection.</p>
+        <p class="muted">Whether it's everyday eyewear or children's sunglasses for outdoor activities, we bring convenience, expert guidance, and designer options straight to your doorstep, saving you time while ensuring the best fit for your child.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+  <section class="tint">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Frequently asked questions</span><h2>Children's glasses FAQ</h2></div>
+      <div class="faq">
+        <details open><summary>Do you offer home service for children's glasses?</summary><p>Yes, Eye'll Be There provides doorstep eye care and eyewear services across Virginia, Maryland, and Washington D.C.</p></details>
+        <details><summary>What types of eyewear do you offer for kids?</summary><p>We offer children's designer glasses, everyday prescription glasses, children's sunglasses, and children's prescription sunglasses.</p></details>
+        <details><summary>How does the home appointment work?</summary><p>We visit your home with frame options, help with fitting, and guide you in selecting the right glasses for your child.</p></details>
+        <details><summary>Are the glasses durable for active children?</summary><p>Yes, we provide lightweight and durable frames designed specifically for active kids.</p></details>
+        <details><summary>Can my child try frames before choosing?</summary><p>Absolutely. We bring multiple options so your child can try and select what feels comfortable and looks great.</p></details>
+        <details><summary>Do you provide prescription lenses as well?</summary><p>Yes, we offer complete solutions including frames and prescription lenses tailored to your child's needs.</p></details>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= WOMEN ================= -->
+<div class="view" id="v-women" data-title="Eye Frames for Women | Eye'll Be There" hidden>
+  <section class="band">
+    <div class="layer rings" data-depth="0.5" aria-hidden="true"><span style="width:340px;height:340px;right:-60px;top:-80px"></span><span style="width:220px;height:220px;right:220px;top:40%"></span></div>
+    <div class="wrap stack">
+      <span class="eyebrow" style="color:#cfe6ff">Services · For women</span>
+      <h1>Eye Frames for Women at Your Doorstep</h1>
+      <p class="lead">Looking for the perfect eye frames for women without visiting multiple stores? Eye'll Be There brings stylish and comfortable eyewear directly to your home across Virginia, Maryland, and Washington D.C.</p>
+      <div class="ctas"><a class="btn btn-white" href="tel:+17038641580"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call now</a></div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap split">
+      <div class="stack">
+        <h2>Frames that match your look</h2>
+        <p class="muted">From lightweight everyday styles to modern female eye frames, we help you find frames that match your look and fit perfectly.</p>
+        <p class="muted">Whether you need durable prescription eye frames for daily wear or want to upgrade your style, our in-home service makes choosing the best eye frames simple, convenient, and stress-free.</p>
+      </div>
+      <div class="stack">
+        <h2>Best eye frames for women: style meets comfort</h2>
+        <p class="muted">Finding the best eye frames for women is about more than just looks. It's about comfort, fit, and confidence. We offer a wide range of female eye frames designed to suit different face shapes, lifestyles, and preferences.</p>
+        <p class="muted">Our experts help you try and select prescription eye frames that feel comfortable for long hours while enhancing your personal style, all from the comfort of your home.</p>
+      </div>
+    </div>
+  </section>
+  <section class="tint">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Frequently asked questions</span><h2>Women's frames FAQ</h2></div>
+      <div class="faq">
+        <details open><summary>Do you offer home service for eye frames for women?</summary><p>Yes, we provide doorstep eyewear services across Virginia, Maryland, and Washington D.C.</p></details>
+        <details><summary>What types of eye frames do you offer?</summary><p>We offer a wide range of eye frames for women, including lightweight, stylish, and prescription eye frames.</p></details>
+        <details><summary>Can I try frames at home before buying?</summary><p>Yes, we bring multiple female eye frames so you can try and choose what suits you best.</p></details>
+        <details><summary>Are your frames suitable for daily wear?</summary><p>Absolutely. Our best eye frames for women are designed for comfort, durability, and long-term use.</p></details>
+        <details><summary>Do you provide prescription lenses?</summary><p>Yes, we offer complete eyewear solutions including prescription eye frames with accurate lens fitting.</p></details>
+        <details><summary>How do I book an appointment?</summary><p>You can easily book a home visit through our website or by contacting our team: call or text 703.864.1580, or email eyellbethere@gmail.com.</p></details>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= SENIORS ================= -->
+<div class="view" id="v-seniors" data-title="Eyeglasses for Seniors at Home | Eye'll Be There" hidden>
+  <section class="band">
+    <div class="layer rings" data-depth="0.5" aria-hidden="true"><span style="width:340px;height:340px;right:-60px;top:-80px"></span><span style="width:220px;height:220px;right:220px;top:40%"></span></div>
+    <div class="wrap stack">
+      <span class="eyebrow" style="color:#cfe6ff">Services · For seniors</span>
+      <h1>Eyeglasses for Seniors at Home</h1>
+      <p class="lead">Looking for comfortable and reliable eyeglasses for seniors without the hassle of visiting a store? Eye'll Be There brings expert eye care and eyewear directly to your home across Virginia, Maryland, and Washington D.C.</p>
+      <div class="ctas"><a class="btn btn-white" href="tel:+17038641580"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call now</a></div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap split">
+      <div class="stack">
+        <h2>Clear vision for everyday life</h2>
+        <p class="muted">We help seniors choose the right glasses with proper fit, clarity, and comfort, including a curated selection of eye frames for men, all from the convenience of home.</p>
+        <p class="muted">Whether it's reading, watching TV, or daily activities, the right eyeglasses make a big difference. Our service ensures seniors get easy access to high-quality frames and prescription lenses without travel or long wait times.</p>
+      </div>
+      <div class="stack">
+        <h2>Comfortable &amp; prescription eyeglasses for seniors</h2>
+        <p class="muted">Choosing the right prescription eyeglasses for seniors is essential for clear vision and everyday comfort. We provide a range of lightweight, easy-to-wear frames designed for long hours of use, including some of the best eye frames for men, along with expert guidance to ensure the perfect fit.</p>
+        <p class="muted">Our in-home service allows seniors to try different styles, get personalized recommendations, and select senior eyeglasses that support both vision and comfort, without leaving home.</p>
+      </div>
+    </div>
+  </section>
+  <section class="tint">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Frequently asked questions</span><h2>Seniors' eyeglasses FAQ</h2></div>
+      <div class="faq">
+        <details open><summary>Do you provide eyeglasses for seniors at home?</summary><p>Yes, we offer doorstep services for eyeglasses for seniors across Virginia, Maryland, and Washington D.C.</p></details>
+        <details><summary>What types of glasses are available for seniors?</summary><p>We offer prescription eyeglasses for seniors, reading glasses, and comfortable everyday frames.</p></details>
+        <details><summary>Can seniors try glasses before buying?</summary><p>Yes, we bring multiple frame options so seniors can try and choose the most comfortable fit.</p></details>
+        <details><summary>Are the frames lightweight and easy to wear?</summary><p>Absolutely. Our senior eyeglasses are designed for comfort, lightweight feel, and long-term use.</p></details>
+        <details><summary>Do you provide prescription lenses?</summary><p>Yes, we provide complete eyewear solutions including accurate prescription lenses.</p></details>
+        <details><summary>How do I book an appointment?</summary><p>You can easily book a home visit through our website or by contacting our team: call or text 703.864.1580, or email eyellbethere@gmail.com.</p></details>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= TRY AT HOME (VIRGINIA) ================= -->
+<div class="view" id="v-try-at-home" data-title="Try Eyewear at Home in Virginia | Eye'll Be There" hidden>
+  <section class="band">
+    <div class="layer rings" data-depth="0.5" aria-hidden="true"><span style="width:340px;height:340px;right:-60px;top:-80px"></span><span style="width:220px;height:220px;right:220px;top:40%"></span></div>
+    <div class="wrap stack">
+      <span class="eyebrow" style="color:#cfe6ff">Try at home · Virginia</span>
+      <h1>Try Eyewear at Home in Virginia</h1>
+      <p class="lead">Finding the right pair of glasses should be comfortable, convenient, and personal. Instead of traveling to an optical store, we bring a curated selection of quality frames, prescription lens options, and personalized guidance directly to you.</p>
+      <div class="ctas"><a class="btn btn-white" href="tel:+17038641580"><svg aria-hidden="true"><use href="#i-phone"/></svg>Try glasses at home</a></div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap split">
+      <div class="stack">
+        <p class="muted">Whether you are replacing an old pair of glasses, looking for a new everyday frame, or helping a family member find comfortable eyewear, our eyewear try-at-home service in Virginia makes the process easier. You can explore different styles in a familiar environment and take the time you need to make a confident decision.</p>
+        <h2>A convenient way to try eyeglasses at home</h2>
+        <p class="muted">Traditional eyewear shopping often means driving to a store, searching through rows of frames, and making a decision in an unfamiliar environment. Eye'll Be There changes that experience by bringing the eyewear selection to you.</p>
+        <p class="muted">Our mobile service allows you to try frames at your home, workplace, or another convenient location. You can see how different styles look in your everyday surroundings while receiving one-on-one assistance throughout the process. There is no need to rush from frame to frame. Instead, you can focus on finding eyewear that feels comfortable and looks right for you.</p>
+      </div>
+      <div class="stack">
+        <h2>Explore quality frames in your own space</h2>
+        <p class="muted">Choosing eyeglasses is about more than finding a frame that looks good on a display. Fit, comfort, style, and everyday practicality all matter.</p>
+        <p class="muted">With our try-glasses-at-home Virginia service, you can physically try different frames and compare your options. You can look at yourself in your own mirror, consider different styles, and ask family members for their opinions. Our curated frame selection gives you the opportunity to explore eyewear without the pressure of a busy optical environment.</p>
+        <h3>Find frames that match your style and comfort. You can consider:</h3>
+        <ul class="ticks"><li>Frame shape</li><li>Overall appearance</li><li>Comfort</li><li>Everyday lifestyle</li></ul>
+      </div>
+    </div>
+  </section>
+  <section class="tint">
+    <div class="wrap">
+      <div class="cards">
+        <div class="card"><h3>Prescription lens options to match your needs</h3><p class="muted">Frames are only one part of a complete pair of glasses. From standard single-vision lenses to advanced lens solutions, we help you understand your options and consider your everyday activities. If you already have a current prescription, our team can guide you through the next steps for your eyewear selection.</p></div>
+        <div class="card"><h3>Personalized eyewear guidance</h3><p class="muted">Not sure which frame shape suits you? You don't have to make the decision alone. We consider appearance, fit, comfort, and lifestyle so you can make a choice that feels right. This one-on-one experience is particularly helpful for people who feel overwhelmed by large optical stores.</p></div>
+        <div class="card"><h3>A comfortable option for families and seniors</h3><p class="muted">Families can choose glasses in a familiar environment, while seniors or individuals with mobility challenges avoid traveling to an optical store. For children who become overwhelmed in busy environments, trying eyewear at home can be calmer. Seniors and assisted living communities can have eyewear services brought directly to them.</p></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap split">
+      <div class="stack">
+        <span class="eyebrow">Why choose Eye'll Be There in Virginia?</span>
+        <h2>Our goal is to make getting new glasses simpler</h2>
+        <ul class="ticks"><li>Convenient at-home frame selection</li><li>Quality eyeglass frames</li><li>Prescription lens options</li><li>Personalized frame and lens guidance</li><li>A comfortable at-home experience</li><li>Delivery and fitting</li><li>A comfortable alternative to traditional optical shopping</li></ul>
+        <div class="ctas"><a class="btn btn-blue" href="#how-it-works">How it works</a><a class="btn btn-blue" style="background:var(--ink)" href="#contact">Contact now</a></div>
+      </div>
+      <div class="stack">
+        <span class="eyebrow">Frequently asked questions</span>
+        <div class="faq">
+          <details open><summary>Can I try glasses at home in Virginia?</summary><p>Yes. Eye'll Be There provides mobile eyewear services across Virginia, allowing customers to try frames in their home or another convenient location.</p></details>
+          <details><summary>Do you provide prescription lenses?</summary><p>Yes. We provide prescription lens options, from standard single-vision lenses to advanced lens solutions, and help you understand which suit your prescription and lifestyle.</p></details>
+          <details><summary>Can seniors use the at-home eyewear service?</summary><p>Yes. Seniors, individuals with mobility challenges, and assisted living communities can have eyewear services brought directly to them.</p></details>
+          <details><summary>Can I get help choosing my frames?</summary><p>Yes. Every visit includes one-on-one guidance on frame shape, fit, comfort, and lens choices.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= HOW IT WORKS ================= -->
+<div class="view" id="v-how-it-works" data-title="How It Works | Eye'll Be There" hidden>
+  <section class="band">
+    <div class="layer rings" data-depth="0.5" aria-hidden="true"><span style="width:340px;height:340px;right:-60px;top:-80px"></span><span style="width:220px;height:220px;right:220px;top:40%"></span></div>
+    <div class="wrap stack">
+      <span class="eyebrow" style="color:#cfe6ff">How it works</span>
+      <h1>From your call to a perfect fit</h1>
+      <p class="lead">Five simple steps, and you never have to set foot in an optical store.</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <ol class="steps">
+        <li><h3>Contact Eye'll Be There</h3><p>Reach out to our team to arrange your mobile eyewear experience. Call or text 703.864.1580.</p></li>
+        <li><h3>We come to you</h3><p>We bring a curated selection of frames and eyewear options to your preferred location.</p></li>
+        <li><h3>Try different frames</h3><p>Take your time exploring different styles, shapes, and fits in your own environment.</p></li>
+        <li><h3>Choose your lenses</h3><p>We help you understand available prescription lens options based on your needs.</p></li>
+        <li><h3>Receive your finished eyewear</h3><p>Once your glasses are ready, we deliver them to you and provide fitting assistance to help ensure a comfortable fit.</p></li>
+      </ol>
+    </div>
+  </section>
+  <section class="tint" style="padding-block:56px">
+    <div class="wrap"><div class="strip"><strong>Ready to start? Step one takes a minute.</strong><a class="btn btn-white" href="tel:+17038641580"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 703.864.1580</a></div></div>
+  </section>
+</div>
+
+<!-- ================= CONTACT ================= -->
+<div class="view" id="v-contact" data-title="Contact Us | Eye'll Be There" hidden>
+  <section class="band">
+    <div class="layer rings" data-depth="0.5" aria-hidden="true"><span style="width:340px;height:340px;right:-60px;top:-80px"></span><span style="width:220px;height:220px;right:220px;top:40%"></span></div>
+    <div class="wrap stack">
+      <span class="eyebrow" style="color:#cfe6ff">Contact us</span>
+      <h1>Eye'll Be There whenever you need us</h1>
+      <p class="lead">We're here to make your eyewear experience simple, convenient, and personalized. Reach out today to book your mobile appointment or ask any questions.</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="contact-cards">
+        <div class="card">
+          <span class="eyebrow">Phone</span>
+          <a class="big" href="tel:+17038641580">703.864.1580</a>
+          <p class="muted">Call or text to schedule your appointment or receive assistance.</p>
+          <div class="links"><a href="tel:+17038641580">Call</a><a href="sms:+17038641580">Text</a></div>
+        </div>
+        <div class="card">
+          <span class="eyebrow">Email</span>
+          <a class="big" href="mailto:eyellbethere@gmail.com">eyellbethere@gmail.com</a>
+          <p class="muted">For booking requests, questions, or general inquiries.</p>
+        </div>
+        <div class="card">
+          <span class="eyebrow">Instagram</span>
+          <a class="big" href="https://www.instagram.com/eyell_be_there/" target="_blank" rel="noopener">@eyell_be_there</a>
+          <p class="muted">Follow us for updates, new frame arrivals, promotions, and behind-the-scenes looks at our mobile optical services.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="tint">
+    <div class="wrap split">
+      <div class="stack">
+        <span class="eyebrow">We look forward to serving you</span>
+        <h2>Clarity, convenience, and style, directly to your door</h2>
+        <p class="muted">Wherever you are in Virginia, Maryland, or Washington, D.C., Eye'll Be There brings clarity, convenience, and style directly to your door.</p>
+        <div class="ctas"><a class="btn btn-blue" href="tel:+17038641580"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call now for quick help</a></div>
+      </div>
+      <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+        <div class="card"><h3>Convenient &amp; Time-Saving</h3><p class="muted">No appointments at optical stores. We come to you.</p></div>
+        <div class="card"><h3>Personalized Experience</h3><p class="muted">One-on-one guidance to choose the best frames and lenses.</p></div>
+        <div class="card"><h3>Premium Quality</h3><p class="muted">Stylish, durable frames and high-quality prescription lenses.</p></div>
+        <div class="card"><h3>Accessible for All</h3><p class="muted">Perfect for special needs children, seniors, and anyone with mobility challenges.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
 </main>
 
 <footer>
   <div class="wrap">
-    <a class="brand" href="#">Eye'll Be <span>There</span></a>
-    <nav aria-label="Footer">
-      <a href="#services">Services</a><a href="#how">How it works</a><a href="#about">About us</a><a href="#contact">Contact us</a>
-      <a href="https://www.instagram.com/eyell_be_there/" target="_blank" rel="noopener">Instagram</a>
-    </nav>
-    <p>Mobile eyewear services across Virginia, Maryland &amp; Washington D.C.</p>
+    <div class="foot">
+      <div>
+        <a class="logo" href="#home"><svg aria-hidden="true"><use href="#i-van"/></svg><b>Eye'll<br>Be<br>There</b></a>
+        <p>Mobile eyewear services across Virginia, Maryland &amp; Washington D.C. Get frames, lenses &amp; fitting, delivered to you.</p>
+      </div>
+      <div><h4>Services</h4><ul><li><a href="#services">All services</a></li><li><a href="#children">For Children</a></li><li><a href="#women">For Women</a></li><li><a href="#seniors">For Seniors</a></li><li><a href="#try-at-home">Try at Home (Virginia)</a></li></ul></div>
+      <div><h4>Service locations</h4><ul><li>Virginia</li><li>Maryland</li><li>Washington D.C.</li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+17038641580">703.864.1580</a></li><li><a href="mailto:eyellbethere@gmail.com">eyellbethere@gmail.com</a></li><li><a href="https://www.instagram.com/eyell_be_there/" target="_blank" rel="noopener">@eyell_be_there</a></li><li><a href="#how-it-works">How it works</a></li></ul></div>
+    </div>
+    <p class="copy">© <span id="yr">2026</span> Eye'll Be There</p>
   </div>
 </footer>
 
-<a class="btn btn-gold dock" href="tel:+17038641580">Call now · 703.864.1580</a>
+<div class="dock">
+  <a class="btn btn-blue" href="tel:+17038641580"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call</a>
+  <a class="btn btn-blue" style="background:var(--ink)" href="sms:+17038641580"><svg aria-hidden="true"><use href="#i-chat"/></svg>Text</a>
+</div>
 
 <script>
 (function () {
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  document.documentElement.classList.add('js');
+  document.getElementById('yr').textContent = new Date().getFullYear();
 
-  // window lights for the hero's middle layer
-  var lights = document.querySelector('.lights');
-  var cols = ['227,169,72', '243,201,122', '150,190,230'];
-  for (var i = 0; i < 26; i++) {
-    var el = document.createElement('i'), s = 20 + Math.random() * 70;
-    el.style.cssText = 'width:' + s + 'px;height:' + s + 'px;left:' + (Math.random() * 100) + '%;top:' + (45 + Math.random() * 45) + '%;background:radial-gradient(circle,rgba(' + cols[i % 3] + ',.55),rgba(' + cols[i % 3] + ',0) 70%)';
-    lights.appendChild(el);
+  /* ---- menu: burger + dropdowns ---- */
+  var nav = document.getElementById('nav'), burger = document.getElementById('burger');
+  function setMenu(open) {
+    nav.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.body.classList.toggle('menu-open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function () { setMenu(burger.getAttribute('aria-expanded') !== 'true'); });
+  var dds = [].slice.call(document.querySelectorAll('.dd-btn'));
+  dds.forEach(function (b) {
+    b.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = b.getAttribute('aria-expanded') !== 'true';
+      dds.forEach(function (o) { o.setAttribute('aria-expanded', 'false'); });
+      b.setAttribute('aria-expanded', open);
+    });
+  });
+  document.addEventListener('click', function (e) { if (!nav.contains(e.target)) dds.forEach(function (o) { o.setAttribute('aria-expanded', 'false'); }); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setMenu(false); dds.forEach(function (o) { o.setAttribute('aria-expanded', 'false'); }); } });
+
+  /* ---- views (one page per menu item) ---- */
+  var views = [].slice.call(document.querySelectorAll('.view'));
+  function route() {
+    var id = (location.hash || '#home').slice(1);
+    var target = document.getElementById('v-' + id) || document.getElementById('v-home');
+    views.forEach(function (v) { v.hidden = v !== target; });
+    document.title = target.dataset.title.replace(/&amp;/g, '&');
+    document.querySelectorAll('.menu a').forEach(function (a) {
+      if (a.getAttribute('href') === '#' + target.id.slice(2)) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+    dds.forEach(function (b) {
+      var active = b.nextElementSibling.querySelector('[aria-current]');
+      b.toggleAttribute('aria-current', !!active);
+      if (active) b.setAttribute('aria-current', 'page');
+      b.setAttribute('aria-expanded', 'false');
+    });
+    setMenu(false);
+    scrollTo(0, 0);
+    paint();
+  }
+  addEventListener('hashchange', route);
+
+  /* ---- tabs ---- */
+  document.querySelectorAll('[data-tabs]').forEach(function (box) {
+    var tabs = [].slice.call(box.querySelectorAll('[role=tab]'));
+    function select(t, focus) {
+      tabs.forEach(function (o) {
+        var on = o === t;
+        o.setAttribute('aria-selected', on);
+        o.tabIndex = on ? 0 : -1;
+        document.getElementById(o.getAttribute('aria-controls')).hidden = !on;
+      });
+      if (focus) t.focus();
+      t.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { select(t); });
+      t.addEventListener('keydown', function (e) {
+        var k = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+        if (k) { e.preventDefault(); select(tabs[(i + k + tabs.length) % tabs.length], true); }
+      });
+    });
+  });
+
+  /* ---- hero lights ---- */
+  var mid = document.querySelector('.l-mid');
+  for (var i = 0; i < 22; i++) {
+    var el = document.createElement('i'), s = 30 + Math.random() * 110;
+    el.style.cssText = 'width:' + s + 'px;height:' + s + 'px;left:' + (Math.random() * 100) + '%;top:' + (Math.random() * 100) + '%';
+    mid.appendChild(el);
   }
 
-  // header turns solid after the hero
-  var top = document.getElementById('top');
-  function hdr() { top.classList.toggle('solid', scrollY > 60); }
-  hdr(); addEventListener('scroll', hdr, { passive: true });
-
-  // transform-based parallax, 3 hero depths plus accents
-  if (reduce) return;
-  var layers = [].slice.call(document.querySelectorAll('[data-depth]'));
+  /* ---- transform-based parallax ---- */
   var ticking = false;
   function paint() {
+    if (reduce) return;
     var vh = innerHeight, k = innerWidth < 640 ? 0.6 : 1;
-    layers.forEach(function (el) {
+    document.querySelectorAll('.view:not([hidden]) [data-depth]').forEach(function (el) {
       var r = el.parentElement.getBoundingClientRect();
       if (r.bottom < -200 || r.top > vh + 200) return;
       var off = (r.top + r.height / 2 - vh / 2) * parseFloat(el.dataset.depth) * k * -0.5;
@@ -416,7 +824,8 @@ footer a:hover { color: var(--frost); }
   }
   addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(paint); } }, { passive: true });
   addEventListener('resize', paint);
-  paint();
+
+  route();
 })();
 </script>
 </body>
